@@ -33,8 +33,8 @@ backend bk_redis
   option tcplog
   option tcp-check
   #uncomment these lines if you have basic auth
-  #tcp-check send AUTH\ yourpassword\r\n
-  #tcp-check expect +OK
+  tcp-check send AUTH\ $REDIS_PASSWORD\r\n
+  tcp-check expect string +OK
   tcp-check send PING\r\n
   tcp-check expect string +PONG
   tcp-check send info\ replication\r\n
