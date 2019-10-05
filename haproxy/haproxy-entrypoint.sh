@@ -11,8 +11,8 @@ tee /etc/haproxy/haproxy.cfg <<EOF
 defaults
   mode tcp
   timeout connect 3s
-  timeout server 6s
-  timeout client 6s
+  timeout server 0s
+  timeout client 0s
 
 listen stats
   mode http
